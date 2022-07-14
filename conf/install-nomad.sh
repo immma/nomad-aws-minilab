@@ -21,8 +21,10 @@ sudo systemctl restart docker
 sudo mkdir /data /data/mysql /data/certs /data/prometheus /data/templates
 sudo chown root -R /data
 
-# Install Nomad
-NOMAD_VERSION=1.1.1
+# Install Nomad version 1.1.1
+# NOMAD_VERSION=1.1.1
+# install Nomad Latest
+NOMAD_VERSION=1.3.2
 sudo curl -sSL https://releases.hashicorp.com/nomad/${NOMAD_VERSION}/nomad_${NOMAD_VERSION}_linux_amd64.zip -o nomad.zip
 if [ ! -d nomad ]; then
   sudo unzip nomad.zip
@@ -42,8 +44,9 @@ sudo mkdir -p /tmp/nomad
 sudo curl https://raw.githubusercontent.com/discoposse/nomad-aws-minilab/master/conf/nomad/server.hcl -o /tmp/nomad/server.hcl
 sudo cp /tmp/nomad/server.hcl /etc/nomad.d/server.hcl
 
-# Install Consul
-CONSUL_VERSION=1.8.4
+# Install Consul 1.8.4
+# CONSUL_VERSION=1.8.4
+CONSUL_VERSION=1.12.3
 sudo curl -sSL https://releases.hashicorp.com/consul/${CONSUL_VERSION}/consul_${CONSUL_VERSION}_linux_amd64.zip > consul.zip
 if [ ! -d consul ]; then
   sudo unzip consul.zip

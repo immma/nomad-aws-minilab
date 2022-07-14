@@ -1,3 +1,5 @@
+```From: discoposse/nomad-aws-minilab```
+
 # Nomad AWS Mini-Lab
 
 Small-scale HashiCorp Nomad running across AWS EC2 instances for quick testing and tear down.

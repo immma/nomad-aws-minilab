@@ -3,6 +3,13 @@ resource "aws_security_group" "nomad-sg" {
   vpc_id = aws_vpc.nomad-lab-vpc.id
  
   ingress {
+    from_port   = 8080
+    to_port     = 8080
+    protocol    = "tcp"
+    cidr_blocks = var.allowed_ip_network
+  }
+  
+  ingress {
     from_port   = 80
     to_port     = 80
     protocol    = "tcp"

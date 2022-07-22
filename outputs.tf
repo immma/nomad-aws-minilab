@@ -18,6 +18,10 @@ output "ec2_nodes" {
 	value = aws_instance.nomad-node[*].public_dns
 }
 
+output "ec2_nodes_ip" {
+	value = aws_instance.nomad-node[*].public_ip
+}
+
 output "connection_info" {
 	value = "ssh -i ${aws_instance.nomad-node.*.key_name} ${aws_instance.nomad-node.*.public_dns}"
 }

@@ -7,7 +7,6 @@ resource "aws_vpc" "nomad-lab-vpc" {
 
   tags = {
     Name = "nomad-lab"
-    Terraform = "true"
-    Turbonomic = "true"
+    Provisioner = "terraform"
   }
 }

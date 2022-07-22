@@ -6,7 +6,7 @@ provider "aws" {
 
 terraform {
   	backend "remote" {
-    	organization = "Wolke"
+    	organization = "wolke"
 
     workspaces {
       	name = "nomad-aws-minilab"

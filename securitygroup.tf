@@ -3,6 +3,20 @@ resource "aws_security_group" "nomad-sg" {
   vpc_id = aws_vpc.nomad-lab-vpc.id
  
   ingress {
+    from_port   = 9999
+    to_port     = 9999
+    protocol    = "tcp"
+    cidr_blocks = var.allowed_ip_network
+  }
+
+  ingress {
+    from_port   = 9998
+    to_port     = 9998
+    protocol    = "tcp"
+    cidr_blocks = var.allowed_ip_network
+  }
+
+  ingress {
     from_port   = 8080
     to_port     = 8080
     protocol    = "tcp"
@@ -144,6 +158,7 @@ resource "aws_security_group" "nomad-sg" {
 
   tags = {
       Terraform = "true"
-      Turbonomic = "true"
+      Provisioner = "ardihan"
+      Name = "nomad-sg"
   }
 }

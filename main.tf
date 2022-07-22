@@ -10,9 +10,7 @@ resource "aws_instance" "nomad-node" {
     private_ip = "10.0.${count.index}.100"
 
     tags = {
-        Terraform = "true"
-        ProvisionedBy = "Project Terra"
-        Turbonomic = "true"
+        Provisioner= "ardih"
         Name = "nomad-node-${count.index}"
     }
 }
